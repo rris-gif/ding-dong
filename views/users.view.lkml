@@ -64,6 +64,12 @@ view: users {
     tiers: [10, 20, 30, 40, 50, 60, 70, 80, 90]
     style: integer
   }
+  measure: average_user_age {
+    type: average
+    label: "Average User Age"
+    sql: ${age} ;;
+    value_format_name: decimal_2
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
