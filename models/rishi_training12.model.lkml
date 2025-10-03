@@ -56,6 +56,7 @@ explore: customer {}
 
 explore: day_of_week {}
 
+
 explore: derived_new {}
 
 explore: demo_visits_data {
