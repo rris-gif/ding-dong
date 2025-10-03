@@ -21,7 +21,6 @@ datagroup: users_datagroup {
 
 persist_with: rishi_training12_default_datagroup
 persist_with: orders_datagroup
-persist_with: users_datagroup
 # Datagroups are defined here
 
 
@@ -161,6 +160,7 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+  persist_with: users_datagroup
 }
 
 explore: order_items {
