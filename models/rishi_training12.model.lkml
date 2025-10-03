@@ -7,8 +7,25 @@ datagroup: rishi_training12_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
+datagroup: orders_datagroup {
+  label: "Orders Datagroup"
+  sql_trigger: SELECT MAX(id) FROM orders;;
+  max_cache_age: "30 minutes"
+}
+
+datagroup: users_datagroup {
+  sql_trigger: SELECT MAX(id) FROM orders;;
+  max_cache_age: "15 hours"
+}
+
 
 persist_with: rishi_training12_default_datagroup
+persist_with: orders_datagroup
+persist_with: users_datagroup
+# Datagroups are defined here
+
+
+# The datagroup is then applied using persist_with
 
 explore: billion_orders {
   join: orders {
