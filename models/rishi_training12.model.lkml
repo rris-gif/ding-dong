@@ -23,6 +23,12 @@ persist_with: rishi_training12_default_datagroup
 persist_with: orders_datagroup
 # Datagroups are defined here
 
+datagroup: orders_count_trigger {
+  # This SQL query will run every 5 minutes.
+  # If the result of the query changes, the datagroup is triggered.
+  sql_trigger: SELECT COUNT(*) FROM orders;;
+  max_cache_age: "24 hours"
+}
 
 # The datagroup is then applied using persist_with
 

@@ -75,7 +75,6 @@ view: users {
     drill_fields: [detail*]
   }
 
-  # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
   id,
@@ -89,5 +88,4 @@ view: users {
   user_data.count
   ]
   }
-
 }
