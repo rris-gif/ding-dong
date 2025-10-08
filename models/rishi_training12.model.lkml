@@ -62,6 +62,8 @@ explore: customer {}
 
 explore: day_of_week {}
 
+explore: orders_pdt {}
+
 
 explore: derived_new {}
 
@@ -169,7 +171,11 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
-  persist_with: users_datagroup
+  join: orders_pdt {
+    type: left_outer
+    sql_on: ${orders.id} = ${orders_pdt.id} ;;
+    relationship: one_to_one
+ }
 }
 
 explore: order_items {
@@ -249,6 +255,8 @@ explore: sample_data {}
 explore: sample_table {}
 
 explore: sandbox_scratch {}
+
+
 
 explore: saralooker {
   join: users {
